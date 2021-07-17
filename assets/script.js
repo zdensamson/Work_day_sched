@@ -14,7 +14,8 @@ var currentDayEl = $("#currentDay").text(now);
 for(i=0; i<hoursDisplayed; i++ ) {
 
     var timeBlockEl = $("<div>")
-        .addClass("row time-block");
+        .addClass("row time-block")
+        .attr("id", i);
 
     var hourEl = $("<div>")
         .addClass("col-1 hour")
@@ -46,3 +47,15 @@ for(i=0; i<hoursDisplayed; i++ ) {
     timeBlockEl.append(hourEl, textEl, btnEl);
     scheduleTable.append(timeBlockEl);
 };
+
+// task text was clicked
+$(".container").on("click", "button", function() {
+    // get the id of the time block who's button was clicked
+    var timeBlockSelected = $(this).closest("div.row");
+    console.log(timeBlockSelected);
+
+    var enteredText = timeBlockSelected.children(".description")
+        .val();
+    console.log(enteredText);
+  
+});
