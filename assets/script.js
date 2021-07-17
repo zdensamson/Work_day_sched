@@ -1,5 +1,7 @@
+// when the day planner will start
 var dayStartHour = 9;
-var hoursDisplayed = 15;
+// how many hours the day planner will generate
+var hoursDisplayed = 14;
 
 // selects the div to hold all time blocks
 var scheduleTable = $(".container");
@@ -12,7 +14,7 @@ var currentDayEl = $("#currentDay").text(now);
 for(i=0; i<hoursDisplayed; i++ ) {
 
     var timeBlockEl = $("<div>")
-        .addClass("row");
+        .addClass("row time-block");
 
     var hourEl = $("<div>")
         .addClass("col-1 hour")
